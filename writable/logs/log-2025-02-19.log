@@ -1,0 +1,490 @@
+CRITICAL - 2025-02-19 00:24:58 --> ErrorException: Undefined variable $bookings
+[Method: GET, Route: field-booking]
+in APPPATH\Views\pages\fieldbooking\field_booking_page.php on line 41.
+ 1 APPPATH\Views\pages\fieldbooking\field_booking_page.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bookings', 'C:\\laragon\\www\\SmashCourtt\\app\\Views\\pages\\fieldbooking\\field_booking_page.php', 41)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\laragon\\www\\SmashCourtt\\app\\Views\\pages\\fieldbooking\\field_booking_page.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/fieldbooking/field_booking_page', [], true)
+ 5 APPPATH\Controllers\FieldBooking\FieldBookingController.php(38): view('pages/fieldbooking/field_booking_page', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+ERROR - 2025-02-19 00:40:06 --> mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause' in C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\SmashCourtt\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\SmashCourtt\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\SmashCourtt\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\SmashCourtt\app\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\SmashCourtt\app\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+#8 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+#9 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+#10 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\SmashCourtt\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\SmashCourtt\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\SmashCourtt\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\SmashCourtt\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-02-19 00:40:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+[Method: GET, Route: field-booking]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:06 --> [Caused by] mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+ERROR - 2025-02-19 00:40:11 --> mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause' in C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\SmashCourtt\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\SmashCourtt\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\SmashCourtt\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\SmashCourtt\app\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\SmashCourtt\app\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+#8 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+#9 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+#10 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\SmashCourtt\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\SmashCourtt\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\SmashCourtt\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\SmashCourtt\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-02-19 00:40:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+[Method: GET, Route: field-booking]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:11 --> [Caused by] mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+ERROR - 2025-02-19 00:40:42 --> mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause' in C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\SmashCourtt\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\SmashCourtt\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\SmashCourtt\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\SmashCourtt\app\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\SmashCourtt\app\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+#8 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+#9 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+#10 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\SmashCourtt\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\SmashCourtt\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\SmashCourtt\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\SmashCourtt\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-02-19 00:40:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+[Method: GET, Route: field-booking]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:40:42 --> [Caused by] mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\FieldBooking\FieldBookingController.php(30): App\Models\FieldBookingModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:59:34 --> ArgumentCountError: Too few arguments to function App\Controllers\FieldBooking\FieldBookingController::formBooking(), 0 passed in C:\laragon\www\SmashCourtt\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: field-booking/form-booking/1]
+in APPPATH\Controllers\FieldBooking\FieldBookingController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->formBooking()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 00:59:58 --> ArgumentCountError: Too few arguments to function App\Controllers\FieldBooking\FieldBookingController::formBooking(), 0 passed in C:\laragon\www\SmashCourtt\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: field-booking/form-booking/1]
+in APPPATH\Controllers\FieldBooking\FieldBookingController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->formBooking()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 01:00:23 --> ArgumentCountError: Too few arguments to function App\Controllers\FieldBooking\FieldBookingController::formBooking(), 0 passed in C:\laragon\www\SmashCourtt\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: field-booking/form-booking/1]
+in APPPATH\Controllers\FieldBooking\FieldBookingController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->formBooking()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 01:03:42 --> ArgumentCountError: Too few arguments to function App\Controllers\FieldBooking\FieldBookingController::formBooking(), 0 passed in C:\laragon\www\SmashCourtt\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: field-booking/form-booking/1]
+in APPPATH\Controllers\FieldBooking\FieldBookingController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FieldBooking\FieldBookingController->formBooking()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FieldBooking\FieldBookingController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+ERROR - 2025-02-19 04:16:25 --> mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause' in C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\SmashCourtt\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\SmashCourtt\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\SmashCourtt\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\SmashCourtt\app\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\SmashCourtt\app\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+#8 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+#9 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+#10 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\SmashCourtt\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\SmashCourtt\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\SmashCourtt\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\SmashCourtt\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-02-19 04:16:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+[Method: GET, Route: user-booking]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 04:16:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 04:16:25 --> [Caused by] mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+ERROR - 2025-02-19 04:17:52 --> mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause' in C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\SmashCourtt\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\SmashCourtt\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\SmashCourtt\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\SmashCourtt\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\SmashCourtt\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\SmashCourtt\app\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\SmashCourtt\app\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+#8 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+#9 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+#10 C:\laragon\www\SmashCourtt\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\SmashCourtt\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\SmashCourtt\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\SmashCourtt\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\SmashCourtt\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-02-19 04:17:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+[Method: GET, Route: user-booking]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 04:17:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 04:17:52 --> [Caused by] mysqli_sql_exception: Unknown column 'delete_sts' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `fieldbookings`
+WHERE `delete_sts` = :delete_sts:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FieldBookingModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\UserBooking\UserBookingController.php(25): App\Models\FieldBookingModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserBooking\UserBookingController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserBooking\UserBookingController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 13:50:44 --> TypeError: App\Controllers\Home::index(): Return value must be of type string, CodeIgniter\HTTP\RedirectResponse returned
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
+CRITICAL - 2025-02-19 13:55:10 --> ErrorException: Undefined variable $total_bookings
+[Method: GET, Route: dashboard]
+in APPPATH\Views\pages\dashboard\dashboard_page.php on line 45.
+ 1 APPPATH\Views\pages\dashboard\dashboard_page.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total_bookings', 'C:\\laragon\\www\\SmashCourtt\\app\\Views\\pages\\dashboard\\dashboard_page.php', 45)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\laragon\\www\\SmashCourtt\\app\\Views\\pages\\dashboard\\dashboard_page.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/dashboard/dashboard_page', [], true)
+ 5 APPPATH\Controllers\Dashboard\DashboardController.php(35): view('pages/dashboard/dashboard_page', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\SmashCourtt\\public\\index.php')
